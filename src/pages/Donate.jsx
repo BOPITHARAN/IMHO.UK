@@ -151,7 +151,7 @@ const Donate = () => {
             {/* Impact Information */}
             <div className="space-y-8">
               <div className="card p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Your Impact</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Donation Value</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
@@ -202,7 +202,7 @@ const Donate = () => {
                     <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>18+ years of proven impact</span>
+                    <span>15+ years of proven impact</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -218,19 +218,18 @@ const Donate = () => {
                 <div className="space-y-3 text-sm">
                   <p className="text-gray-600 dark:text-gray-400">
                     <strong className="text-gray-900 dark:text-white">Bank Transfer:</strong><br />
-                    Account: IMHO-UK<br />
-                    Sort Code: XX-XX-XX<br />
-                    Account Number: XXXXXXXX
+                    Account: INTERNATIONAL MEDICAL HEALTH ORGANI SATION UK<br />
+                    Sort Code: 23-05-80<br />
+                    Account Number: 56405476 <br />
+                    IBAN : GB57 MYMB 2305 8056 4054 76
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
-                    <strong className="text-gray-900 dark:text-white">Cheque:</strong><br />
-                    Make payable to "IMHO-UK\" and send to:<br />
-                    IMHO-UK, London, UK
+                    <strong className="text-gray-900 dark:text-white">Gift Aid:</strong> If you are a UK taxpayer, please consider adding Gift Aid to your donation. This allows us to claim an extra 25p for every £1 you donate.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
                     For large donations or legacy giving, please contact us at{' '}
                     <a href="mailto:donations@imho-uk.org" className="text-primary-600 dark:text-primary-400 hover:underline">
-                      donations@imho-uk.org
+                      info@imho-uk.org
                     </a>
                   </p>
                 </div>

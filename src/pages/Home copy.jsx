@@ -24,68 +24,53 @@ const Home = () => {
 
   const stats = [
     { number: '15+', label: 'Years of Service' },
-    { number: '10', label: 'Countries Reached' },
+    { number: '19', label: 'Countries Reached' },
     { number: '35+', label: 'Hospitals & Clinics Supported' },
     { number: '2000+', label: 'Lives Impacted' }
   ]
 
-const focusAreas = [
-  {
-    title: 'Healthcare Access',
-    description: 'Supporting the development of self-sustaining healthcare solutions that promote long-term resilience and self-reliance.',
-    icon: '🏥',
-    location1: 'Refurbishment of A&E at Thellippalai',
-    location2: 'Provision of healthcare facilities in the village of Thenamaravaady'
-  },
-  {
-    title: 'Education & Support',
-    description: 'Supplementary education support for underprivileged children.',
-    icon: '📚'
-  },
-  {
-    title: 'Community Partnerships',
-    description: 'Partnering with local and international organizations to maximize impact and reach those in greatest need.',
-    icon: '🤝',
-    location1: 'Jaffna Jaipur Center',
-    location2: 'Thenamaravaady Health Center'
-  }
-];
-
+  const focusAreas = [
+    {
+      title: 'Healthcare Access',
+      description: 'Supporting the development of self-sustaining healthcare solutions that promote long-term resilience and self-reliance.',
+      icon: '🏥'
+    },
+    {
+      title: 'Education & Training',
+      description: 'Leveraging the transformative power of education to improve health outcomes and build local capacity.',
+      icon: '📚'
+    },
+    {
+      title: 'Community Partnerships',
+      description: 'Partnering with local and international organizations to maximize impact and reach those in greatest need.',
+      icon: '🤝'
+    }
+  ]
 
   const currentNeeds = [
-  {
-    title: 'Jaffna Jaipur Center',
-    description: 'Provision of prosthetic limbs for everyone.',
-    image: 'https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg'
-  },
-  {
-    title: 'Supplementary Education',
-    description: 'Providing support for underprivileged children.',
-    image: 'https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg'
-  },
-  {
-    title: 'Healthcare Access',
-    description: 'Providing resources and facilities to all communities.',
-    image: 'https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg'
-  }
-];
-
+    {
+      title: 'Covid19 Relief',
+      description: 'District General Hospital (DGH) Vavuniya is in urgent need of medical equipment to provide oxygen support to COVID19 patients.',
+      image: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: 'Palliative Care',
+      description: 'Our international collaborative Northern Province Palliative Care Initiative aims at easing pain and improving quality of life.',
+      image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: 'Food Relief',
+      description: 'Food security is a real concern for day labourers and vulnerable families in remote villages affected by the current pandemic.',
+      image: 'https://images.pexels.com/photos/6995247/pexels-photo-6995247.jpeg?auto=compress&cs=tinysrgb&w=400'
+    }
+  ]
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${homepagephoto})` }}
-        ></div>
-
-        {/* Gradient + Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/70 via-primary-700/70 to-primary-800/70"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
-
-        {/* Content */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 hero-pattern">
+        <img src={homepagephoto} alt="" />
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -106,7 +91,7 @@ const focusAreas = [
             </div>
           </div>
         </div>
-
+        
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
           <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,10 +134,6 @@ const focusAreas = [
                 <div className="text-4xl mb-4">{area.icon}</div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{area.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{area.description}</p>
-                <p className="text-gray-500 dark:text-gray-300 mt-2">
-                  {area.location1 ? ` ${area.location1}` : '   '} <br />
-                  {area.location2 ? ` ${area.location2}` : '   '}
-                </p>
               </div>
             ))}
           </div>
@@ -226,8 +207,8 @@ const focusAreas = [
                     <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                       {article.content.substring(0, 150)}...
                     </p>
-                    <Link
-                      to={`/news/${article.id}`}
+                    <Link 
+                      to={`/news/${article.id}`} 
                       className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
                     >
                       Read More →
