@@ -82,15 +82,7 @@ const Navbar = () => {
     <nav className={`w-full z-50  duration-30`}>
       <div className="container-max">
         <div className="flex justify-between items-center py-4">
-          <img src={imhologo} alt="" width={200} />
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-50 bg-primary-600 rounded-lg flex items-center justify-center">
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">IMHO-UK</h1>
-              <p className="text-xs text-gray-600 dark:text-gray-400">International Medical Health Organization</p>
-            </div>
-          </Link>
+          <img src={imhologo} alt="" width={150} />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -99,8 +91,8 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${location.pathname === item.path
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-gray-700 dark:text-gray-300'
+                    ? 'text-primary-600 dark:text-primary-400'
+                    : 'text-gray-700 dark:text-gray-300'
                     }`}
                 >
                   {item.name}
@@ -108,7 +100,7 @@ const Navbar = () => {
 
                 {/* Dropdown Menu */}
                 {item.submenu && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute z-50 top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                     <div className="py-2">
                       {item.submenu.map((subItem) => (
                         <Link
@@ -129,7 +121,7 @@ const Navbar = () => {
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
             {/* Theme Toggle */}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               aria-label="Toggle theme"
@@ -143,7 +135,7 @@ const Navbar = () => {
                   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                 </svg>
               )}
-            </button>
+            </button> */}
 
             {/* Donate Button */}
             <Link to="/donate" className="btn-primary hidden sm:inline-block">

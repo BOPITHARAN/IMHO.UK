@@ -88,10 +88,9 @@ const focusAreas = [
         {/* Content */}
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight">
               International Medical
-              <br />
-              <span className="gradient-text">Health Organization</span>
+              Health Organization
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
               "Through collaboration and compassion, we strive to create lasting impact and inspire positive change worldwide."
@@ -139,7 +138,10 @@ const focusAreas = [
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Mission</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              IMHO-UK envisions a world where every individual, regardless of their circumstances, has access to quality healthcare and the opportunity for a healthier future. Our focus is on improving the physical and mental well-being of those most vulnerable—particularly communities affected by poverty, conflict, and natural disasters.
+              IMHO-UK envisions a world where every individual, regardless of their circumstances, 
+              has access to quality healthcare and the opportunity for a healthier future. Our focus is 
+              on improving the physical and mental well-being of those most vulnerable—particularly communities 
+              affected by poverty, conflict, and natural disasters.
             </p>
           </div>
 

@@ -12,12 +12,13 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme')
-      return saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
-    }
-    return false
-  })
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem('theme')
+    return saved ? saved === 'dark' : false  // 👈 default = light
+  }
+  return false
+})
+
 
   useEffect(() => {
     const root = window.document.documentElement

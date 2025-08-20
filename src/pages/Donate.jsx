@@ -228,8 +228,8 @@ const Donate = () => {
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
                     For large donations or legacy giving, please contact us at{' '}
-                    <a href="mailto:donations@imho-uk.org" className="text-primary-600 dark:text-primary-400 hover:underline">
-                      info@imho-uk.org
+                    <a href="mailto:info@imhouk.co.uk" className="text-primary-600 dark:text-primary-400 hover:underline">
+                    info@imhouk.co.uk
                     </a>
                   </p>
                 </div>
