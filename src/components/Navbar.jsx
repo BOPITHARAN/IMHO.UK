@@ -79,17 +79,12 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+    <nav className={`w-full z-50  duration-30`}>
       <div className="container-max">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+          <img src={imhologo} alt="" width={200} />
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 bg-primary-600 rounded-lg flex items-center justify-center">
-            <img src={imhologo} alt="" />
+            <div className="w-50 bg-primary-600 rounded-lg flex items-center justify-center">
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">IMHO-UK</h1>
@@ -103,15 +98,14 @@ const Navbar = () => {
               <div key={item.name} className="relative group">
                 <Link
                   to={item.path}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${
-                    location.pathname === item.path
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${location.pathname === item.path
                       ? 'text-primary-600 dark:text-primary-400'
                       : 'text-gray-700 dark:text-gray-300'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
-                
+
                 {/* Dropdown Menu */}
                 {item.submenu && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">

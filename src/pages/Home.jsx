@@ -89,7 +89,7 @@ const focusAreas = [
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              The International Medical
+              International Medical
               <br />
               <span className="gradient-text">Health Organization</span>
             </h1>
