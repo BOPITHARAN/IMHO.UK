@@ -52,19 +52,7 @@ const GetInvolved = () => {
       description: 'Join our team of dedicated volunteers and contribute your skills to make a direct impact.',
       icon: '🤝',
       link: '/get-involved/volunteers'
-    },
-    {
-      title: 'Internships',
-      description: 'Gain valuable experience while contributing to meaningful healthcare projects.',
-      icon: '🎓',
-      link: '/get-involved/internships'
-    },
-    {
-      title: 'Advisors',
-      description: 'Share your expertise and help guide our strategic initiatives and programs.',
-      icon: '💡',
-      link: '/get-involved/advisors'
-    }
+    } 
   ]
 
   // Individual involvement pages
@@ -88,7 +76,7 @@ const GetInvolved = () => {
               <li>Tell us how our work has impacted you</li>
               <li>Inspire others to get involved</li>
             </ul>
-            <p>Contact us at <a href="mailto:stories@imho-uk.org">stories@imho-uk.org</a> to share your story.</p>
+            <p>Contact us at <a href="mailto:info@imhouk.co.uk">info@imhouk.co.uk</a> to share your story.</p>
           </div>
         </div>
       </section>
@@ -115,7 +103,7 @@ const GetInvolved = () => {
               <li>Annual memorial events</li>
               <li>Family tribute pages</li>
             </ul>
-            <p>For more information about memorial giving, please contact us at <a href="mailto:memorial@imho-uk.org">memorial@imho-uk.org</a>.</p>
+            <p>For more information about memorial giving, please contact us at <a href="mailto:info@imhouk.co.uk">info@imhouk.co.uk</a>.</p>
           </div>
         </div>
       </section>
@@ -150,7 +138,7 @@ const GetInvolved = () => {
               <li>Good communication skills</li>
               <li>Willingness to learn and adapt</li>
             </ul>
-            <p>Ready to volunteer? Contact us at <a href="mailto:volunteers@imho-uk.org">volunteers@imho-uk.org</a>.</p>
+            <p>Ready to volunteer? Contact us at <a href="mailto:info@imhouk.co.uk">info@imhouk.co.uk</a>.</p>
           </div>
         </div>
       </section>
@@ -186,7 +174,7 @@ const GetInvolved = () => {
               <li>Certificate of completion</li>
               <li>Potential for future employment</li>
             </ul>
-            <p>Interested in an internship? Send your CV and cover letter to <a href="mailto:internships@imho-uk.org">internships@imho-uk.org</a>.</p>
+            <p>Interested in an internship? Send your CV and cover letter to <a href="mailto:info@imhouk.co.uk">info@imhouk.co.uk</a>.</p>
           </div>
         </div>
       </section>
@@ -223,42 +211,18 @@ const GetInvolved = () => {
               <li>Support fundraising efforts when appropriate</li>
               <li>Advocate for IMHO-UK's mission</li>
             </ul>
-            <p>If you're interested in becoming an advisor, please contact us at <a href="mailto:advisors@imho-uk.org">advisors@imho-uk.org</a>.</p>
+            <p>If you're interested in becoming an advisor, please contact us at <a href="mailto:info@imhouk.co.uk">info@imhouk.co.uk</a>.</p>
           </div>
         </div>
       </section>
     </div>
   )
 
-  // Navigation for Get Involved section
-  const involvedNavItems = [
-    { name: 'Overview', path: '/get-involved' },
-    { name: 'Volunteers', path: '/get-involved/volunteers' },
-    { name: 'Internships', path: '/get-involved/internships' }
-  ]
+ 
 
   return (
     <div>
-      {/* Sub-navigation */}
-      <div className="bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700 pt-20">
-        <div className="container-max">
-          <nav className="flex space-x-8 py-4">
-            {involvedNavItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary-600 dark:text-primary-400 border-b-2 border-primary-600 dark:border-primary-400'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
+     
 
       <Routes>
         <Route path="/" element={<GetInvolvedHome />} />

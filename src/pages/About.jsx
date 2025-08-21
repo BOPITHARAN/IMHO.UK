@@ -132,7 +132,24 @@ const About = () => {
             </p>
           </div>
           <div className="text-center py-16">
-            <p className="text-gray-600 dark:text-gray-400">Team information will be updated soon.</p>
+            <p className="text-gray-600 dark:text-gray-400"> <h2 className=' texh-lg'>Board of trustees </h2> <br />
+              - Dr S Sivakumar <br />
+              - Dr K Jeyanthan <br />
+              - Mr G Rajkumar <br />
+              - Mr A Maxwell <br />
+              - Mr V Sritharan</p>
+          </div>
+          <div className="text-center py-16">
+            <p className="text-gray-600 dark:text-gray-400"> <h2 className=' texh-lg'>Officers and Team Members</h2> <br />
+              - Mr Sritharan <br />
+              - Mr Mariampillai <br />
+              - Mr Ganendran <br />
+              - Mr Muhunthan <br /> 
+              - Mr Neranjan <br />
+              - Mr Sivapooranan <br />
+              - Mr Sivachelam <br />
+              - Mr Thiraviathasan <br />
+              - Mr Thanabalasingam </p>
           </div>
         </div>
       </section>
@@ -229,11 +246,10 @@ const About = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary-600 dark:text-primary-400 border-b-2 border-primary-600 dark:border-primary-400'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`}
+                className={`text-sm font-medium transition-colors duration-200 ${location.pathname === item.path
+                  ? 'text-primary-600 dark:text-primary-400 border-b-2 border-primary-600 dark:border-primary-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
               >
                 {item.name}
               </Link>

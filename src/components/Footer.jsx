@@ -32,7 +32,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">About Us</Link></li>
-              <li><Link to="/projects" className="text-gray-400 hover:text-white transition-colors duration-200">Our Projects</Link></li>
+              <li> <a className='text-gray-400 hover:text-white transition-colors duration-200' href="https://www.imhocanada.org/"> IMHO Canada</a></li>
               <li><Link to="/news" className="text-gray-400 hover:text-white transition-colors duration-200">Latest News</Link></li>
               <li><Link to="/get-involved" className="text-gray-400 hover:text-white transition-colors duration-200">Get Involved</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact Us</Link></li>
@@ -43,17 +43,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Work</h4>
             <ul className="space-y-2">
-              <li><Link to="/projects/palliative-care" className="text-gray-400 hover:text-white transition-colors duration-200">Palliative Care</Link></li>
-              <li><Link to="/projects/water-filtration" className="text-gray-400 hover:text-white transition-colors duration-200">Water Filtration</Link></li>
-              <li><Link to="/projects/gender-equality" className="text-gray-400 hover:text-white transition-colors duration-200">Gender Equality</Link></li>
-              <li><Link to="/projects/flood-relief" className="text-gray-400 hover:text-white transition-colors duration-200">Flood Relief</Link></li>
-              <li><Link to="/donate" className="text-gray-400 hover:text-white transition-colors duration-200">Make a Donation</Link></li>
+              <li><Link to="/projects/palliative-care" className="text-gray-400 hover:text-white transition-colors duration-200">Food and Flood Relief</Link></li>
+              <li><Link to="/projects/water-filtration" className="text-gray-400 hover:text-white transition-colors duration-200">Primary Care Assistance</Link></li>
+              <li><Link to="/projects/gender-equality" className="text-gray-400 hover:text-white transition-colors duration-200">Educational Assistance</Link></li>
+              <li><Link to="/projects/flood-relief" className="text-gray-400 hover:text-white transition-colors duration-200">Public Health Supports</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4">Project Partnership request</h4>
             <div className="space-y-3 text-gray-400 text-sm">
               <div className="flex items-start space-x-3">
                 <svg className="w-5 h-5 mt-0.5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">

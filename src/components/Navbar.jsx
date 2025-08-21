@@ -36,37 +36,15 @@ const Navbar = () => {
       name: 'Projects',
       path: '/projects',
       submenu: [
-        { name: 'Gender Equality Initiative', path: '/projects/gender-equality' },
-        { name: 'Water Filtration', path: '/projects/water-filtration' },
-        { name: 'Home Gardening', path: '/projects/home-gardening' },
-        { name: 'Palliative Care', path: '/projects/palliative-care' },
-        { name: 'Toilet Facilities', path: '/projects/toilet-facilities' },
-        { name: 'Recent Projects', path: '/projects/recent' },
-        { name: 'Flood Relief 2024', path: '/projects/flood-relief' }
-      ]
-    },
-    {
-      name: 'IMHO 360',
-      path: '/imho-360',
-      submenu: [
-        { name: '360 Home', path: '/imho-360/home' },
-        { name: 'Donor Dashboard', path: '/imho-360/donors' },
-        { name: 'Recipients', path: '/imho-360/recipients' },
-        { name: 'Administration', path: '/imho-360/admin' },
-        { name: 'Coordination', path: '/imho-360/coordination' },
-        { name: 'Events', path: '/imho-360/events' }
+        { name: '⁠Primary Care Assistance', path: '/projects/water-filtration' },
+        { name: '⁠Educational Assistance ', path: '/projects/home-gardening' },
+        { name: '⁠Public Health Supports', path: '/projects/palliative-care' },
+        { name: 'Food and Flood Relief', path: '/projects/flood-relief' }
       ]
     },
     {
       name: 'Get Involved',
       path: '/get-involved',
-      submenu: [
-        { name: 'Share My Day', path: '/get-involved/share-my-day' },
-        { name: 'In Memoriam', path: '/get-involved/memoriam' },
-        { name: 'Volunteers', path: '/get-involved/volunteers' },
-        { name: 'Internships', path: '/get-involved/internships' },
-        { name: 'Advisors', path: '/get-involved/advisors' }
-      ]
     },
     {
       name: 'Publications',
@@ -90,7 +68,7 @@ const Navbar = () => {
               <div key={item.name} className="relative group">
                 <Link
                   to={item.path}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${location.pathname === item.path
+                  className={`text-lg font-medium transition-colors duration-200 hover:text-primary-600 dark:hover:text-primary-400 ${location.pathname === item.path
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-700 dark:text-gray-300'
                     }`}
@@ -121,7 +99,7 @@ const Navbar = () => {
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
             {/* Theme Toggle */}
-            {/* <button
+            <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               aria-label="Toggle theme"
@@ -135,7 +113,7 @@ const Navbar = () => {
                   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                 </svg>
               )}
-            </button> */}
+            </button>
 
             {/* Donate Button */}
             <Link to="/donate" className="btn-primary hidden sm:inline-block">

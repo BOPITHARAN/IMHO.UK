@@ -6,6 +6,15 @@ import homepagephoto from '../../assets/images/home-page-img.jpg'
 const Home = () => {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Image Slider Photos
+  const sliderImages = [
+    homepagephoto,
+    "https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg",
+    "https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg",
+    "https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg"
+  ]
 
   useEffect(() => {
     fetchLatestNews()
@@ -22,6 +31,14 @@ const Home = () => {
     }
   }
 
+  // Auto Slide every 5 sec
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [sliderImages.length])
+
   const stats = [
     { number: '15+', label: 'Years of Service' },
     { number: '10', label: 'Countries Reached' },
@@ -29,88 +46,82 @@ const Home = () => {
     { number: '2000+', label: 'Lives Impacted' }
   ]
 
-const focusAreas = [
-  {
-    title: 'Healthcare Access',
-    description: 'Supporting the development of self-sustaining healthcare solutions that promote long-term resilience and self-reliance.',
-    icon: '🏥',
-    location1: 'Refurbishment of A&E at Thellippalai',
-    location2: 'Provision of healthcare facilities in the village of Thenamaravaady'
-  },
-  {
-    title: 'Education & Support',
-    description: 'Supplementary education support for underprivileged children.',
-    icon: '📚'
-  },
-  {
-    title: 'Community Partnerships',
-    description: 'Partnering with local and international organizations to maximize impact and reach those in greatest need.',
-    icon: '🤝',
-    location1: 'Jaffna Jaipur Center',
-    location2: 'Thenamaravaady Health Center'
-  }
-];
-
+  const focusAreas = [
+    {
+      title: 'Healthcare Access',
+      description: 'Supporting the development of self-sustaining healthcare solutions that promote long-term resilience and self-reliance.',
+      icon: '🏥',
+    },
+    {
+      title: 'Education & Support',
+      description: 'Supplementary education support for underprivileged children.',
+      icon: '📚'
+    },
+    {
+      title: 'Community Partnerships',
+      description: 'Partnering with local and international organizations to maximize impact and reach those in greatest need.',
+      icon: '🤝',
+    }
+  ]
 
   const currentNeeds = [
-  {
-    title: 'Jaffna Jaipur Center',
-    description: 'Provision of prosthetic limbs for everyone.',
-    image: 'https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg'
-  },
-  {
-    title: 'Supplementary Education',
-    description: 'Providing support for underprivileged children.',
-    image: 'https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg'
-  },
-  {
-    title: 'Healthcare Access',
-    description: 'Providing resources and facilities to all communities.',
-    image: 'https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg'
-  }
-];
-
+    {
+      title: 'Jaffna Jaipur Center',
+      description: 'Provision of prosthetic limbs for everyone.',
+      image: 'https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg'
+    },
+    {
+      title: 'Supplementary Education',
+      description: 'Providing support for underprivileged children.',
+      image: 'https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg'
+    },
+    {
+      title: 'Healthcare Access',
+      description: 'Providing resources and facilities to all communities.',
+      image: 'https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg'
+    }
+  ]
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${homepagephoto})` }}
-        ></div>
-
-        {/* Gradient + Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/70 via-primary-700/70 to-primary-800/70"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
+      {/* Hero Section with Slider */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Image Slider */}
+        <div className="absolute inset-0">
+          {sliderImages.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ backgroundImage: `url(${img})` }}
+            ></div>
+          ))}
+        </div>
 
         {/* Content */}
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight">
-              International Medical
-              Health Organization
+              International Medical Health Organization
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
               "Through collaboration and compassion, we strive to create lasting impact and inspire positive change worldwide."
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/about" className="btn-secondary bg-white/10 border-white/30 text-white hover:bg-white/20">
-                Learn More
-              </Link>
-              <Link to="/donate" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-                Donate Now
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-          <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        {/* Slider Controls */}
+        <div className="absolute inset-x-0 bottom-8 flex justify-center space-x-3 z-10">
+          {sliderImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full ${
+                currentSlide === index ? 'bg-white' : 'bg-white/50'
+              }`}
+            ></button>
+          ))}
         </div>
       </section>
 
@@ -123,9 +134,7 @@ const focusAreas = [
                 <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 font-medium">
-                  {stat.label}
-                </div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -138,23 +147,17 @@ const focusAreas = [
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Mission</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              IMHO-UK envisions a world where every individual, regardless of their circumstances, 
-              has access to quality healthcare and the opportunity for a healthier future. Our focus is 
-              on improving the physical and mental well-being of those most vulnerable—particularly communities 
-              affected by poverty, conflict, and natural disasters.
+              IMHO-UK envisions a world where every individual, regardless of their circumstances, has access to quality healthcare and the opportunity for a healthier future. Our focus is on improving the physical and mental well-being of those most vulnerable—particularly communities affected by poverty, conflict, and natural disasters.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
               <div key={index} className="card p-8 text-center animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="text-4xl mb-4">{area.icon}</div>
+                <div className="text-7xl mb-4">{area.icon}</div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{area.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{area.description}</p>
-                <p className="text-gray-500 dark:text-gray-300 mt-2">
-                  {area.location1 ? ` ${area.location1}` : '   '} <br />
-                  {area.location2 ? ` ${area.location2}` : '   '}
-                </p>
+                
               </div>
             ))}
           </div>
@@ -194,9 +197,7 @@ const focusAreas = [
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Recent Activities</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Stay updated with our latest initiatives and impact stories.
-              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-400">Stay updated with our latest initiatives and impact stories.</p>
             </div>
             <Link to="/news" className="btn-secondary hidden sm:inline-block">
               View All News
@@ -222,16 +223,9 @@ const focusAreas = [
                         day: 'numeric'
                       })}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                      {article.content.substring(0, 150)}...
-                    </p>
-                    <Link
-                      to={`/news/${article.id}`}
-                      className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
-                    >
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white line-clamp-2">{article.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{article.content.substring(0, 150)}...</p>
+                    <Link to={`/news/${article.id}`} className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
                       Read More →
                     </Link>
                   </div>

@@ -158,8 +158,8 @@ const Donate = () => {
                       <span className="text-primary-600 dark:text-primary-400 font-bold">£25</span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">Provides medical supplies</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Essential medicines for 5 patients</p>
+                      <p className="font-medium text-gray-900 dark:text-white">Genaral Fund</p>
+                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Essential medicines for 5 patients</p> */}
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -167,17 +167,17 @@ const Donate = () => {
                       <span className="text-primary-600 dark:text-primary-400 font-bold">£50</span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">Supports clean water access</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Water filtration for one family</p>
+                      <p className="font-medium text-gray-900 dark:text-white">Education Support</p>
+                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Water filtration for one family</p> */}
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary-600 dark:text-primary-400 font-bold">£100</span>
+                      <span className="text-primary-600 dark:text-primary-400 font-bold">£125</span>
                     </div>
                     <div>
                       <p className="font-medium text-gray-900 dark:text-white">Funds healthcare training</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Training for one healthcare worker</p>
+                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Training for one healthcare worker</p> */}
                     </div>
                   </div>
                 </div>
