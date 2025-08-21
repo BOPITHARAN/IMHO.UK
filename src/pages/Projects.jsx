@@ -25,11 +25,10 @@ const Projects = () => {
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      project.status === 'Active' 
-                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                        : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                    }`}>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${project.status === 'Active'
+                      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                      : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
+                      }`}>
                       {project.status}
                     </span>
                     <Link to={project.link} className="text-primary-600 dark:text-primary-400 hover:underline">
@@ -47,46 +46,32 @@ const Projects = () => {
 
   const projectsData = [
     {
-      title: 'Gender Equality Initiative',
-      description: 'Improving gender equality in North and East Sri Lanka through education and empowerment programs.',
-      image: 'https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=400',
-      status: 'Active',
-      link: '/projects/gender-equality'
-    },
-    {
-      title: 'Water Filtration Project',
-      description: 'Providing clean water access through filtration systems in Mullaitivu region.',
-      image: 'https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&w=400',
-      status: 'Active',
-      link: '/projects/water-filtration'
-    },
-    {
-      title: 'Home Gardening Initiative',
-      description: 'Supporting sustainable food production through home gardening programs in Mullaitivu.',
-      image: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400',
-      status: 'Active',
-      link: '/projects/home-gardening'
-    },
-    {
-      title: 'Palliative Care Initiative',
-      description: 'Easing pain and improving quality of life for patients and families in Northern Province.',
-      image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400',
-      status: 'Active',
-      link: '/projects/palliative-care'
-    },
-    {
-      title: 'Toilet Facilities Project',
-      description: 'Improving sanitation infrastructure in the Vanni area for better health outcomes.',
-      image: 'https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=400',
-      status: 'Completed',
-      link: '/projects/toilet-facilities'
-    },
-    {
-      title: 'Flood Relief 2024',
+      title: 'Food and Flood Relief',
       description: 'Emergency response and recovery support for flood-affected communities.',
       image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=400',
       status: 'Active',
       link: '/projects/flood-relief'
+    },
+    {
+      title: '⁠Primary Care Assistance',
+      description: 'Improving gender equality in North and East Sri Lanka through education and empowerment programs.',
+      image: 'https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=400',
+      status: 'Active',
+      link: '/projects/⁠Primary-Care'
+    },
+    {
+      title: '⁠Educational Assistance',
+      description: 'Providing clean water access through filtration systems in Mullaitivu region.',
+      image: 'https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&w=400',
+      status: 'Active',
+      link: '/projects/⁠Educational-Assistance'
+    },
+    {
+      title: '⁠Public Health Supports',
+      description: 'Supporting sustainable food production through home gardening programs in Mullaitivu.',
+      image: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400',
+      status: 'Active',
+      link: '/projects/⁠Public-Health'
     }
   ]
 
@@ -235,15 +220,40 @@ const Projects = () => {
     <div className="min-h-screen pt-20">
       <section className="section-padding">
         <div className="container-max max-w-4xl mx-auto">
-          <Link to="/projects" className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline mb-8">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          {/* Back to Projects Link */}
+          <Link
+            to="/projects"
+            className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline mb-8"
+          >
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
             Back to Projects
           </Link>
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Flood Relief 2024</h1>
+
+          {/* Title */}
+          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            Flood Relief 2024
+          </h1>
+
+          {/* Description */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p>In response to the devastating floods of 2024, IMHO-UK launched an emergency relief operation to support affected communities with immediate aid and long-term recovery assistance.</p>
+            <p>
+              In response to the devastating floods of 2024, IMHO-UK launched an
+              emergency relief operation to support affected communities with
+              immediate aid and long-term recovery assistance.
+            </p>
+
             <h3>Emergency Response</h3>
             <ul>
               <li>Emergency food and water distribution</li>
@@ -251,10 +261,121 @@ const Projects = () => {
               <li>Medical aid and supplies</li>
               <li>Evacuation support</li>
             </ul>
+
             <h3>Recovery Phase</h3>
-            <p>Our ongoing recovery efforts focus on rebuilding infrastructure, restoring livelihoods, and strengthening community resilience against future disasters.</p>
+            <p>
+              Our ongoing recovery efforts focus on rebuilding infrastructure,
+              restoring livelihoods, and strengthening community resilience
+              against future disasters.
+            </p>
+
             <h3>Current Needs</h3>
-            <p>We continue to seek support for reconstruction efforts, including rebuilding homes, schools, and healthcare facilities damaged by the floods.</p>
+            <p>
+              We continue to seek support for reconstruction efforts, including
+              rebuilding homes, schools, and healthcare facilities damaged by
+              the floods.
+            </p>
+          </div>
+
+          {/* Gallery Section */}
+          <div className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -301,11 +422,10 @@ const Projects = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary-600 dark:text-primary-400 border-b-2 border-primary-600 dark:border-primary-400'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                }`}
+                className={`text-sm font-medium transition-colors duration-200 ${location.pathname === item.path
+                  ? 'text-primary-600 dark:text-primary-400 border-b-2 border-primary-600 dark:border-primary-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                  }`}
               >
                 {item.name}
               </Link>
@@ -316,11 +436,9 @@ const Projects = () => {
 
       <Routes>
         <Route path="/" element={<ProjectsHome />} />
-        <Route path="/gender-equality" element={<GenderEquality />} />
-        <Route path="/water-filtration" element={<WaterFiltration />} />
-        <Route path="/home-gardening" element={<HomeGardening />} />
-        <Route path="/palliative-care" element={<PalliativeCare />} />
-        <Route path="/toilet-facilities" element={<ToiletFacilities />} />
+        <Route path="/⁠Primary-Care" element={<GenderEquality />} />
+        <Route path="/⁠Educational-Assistance" element={<WaterFiltration />} />
+        <Route path="/⁠Public-Health" element={<HomeGardening />} />
         <Route path="/flood-relief" element={<FloodRelief />} />
         <Route path="/recent" element={<RecentProjects />} />
       </Routes>

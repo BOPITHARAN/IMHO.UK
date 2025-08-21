@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import homepagephoto from '../../assets/images/home-page-img.jpg'
+import homepagephoto1 from '../../assets/images/1.jpg'
+import homepagephoto2 from '../../assets/images/2.jpg'
+import homepagephoto3 from '../../assets/images/3.jpg'
+import homepagephoto4 from '../../assets/images/4.jpg'
+import healthcare from '../../assets/images/health care.jpg'
 
 const Home = () => {
   const [news, setNews] = useState([])
@@ -10,10 +14,10 @@ const Home = () => {
 
   // Image Slider Photos
   const sliderImages = [
-    homepagephoto,
-    "https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg",
-    "https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg",
-    "https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg"
+    homepagephoto1,
+    homepagephoto2,
+    homepagephoto3,
+    homepagephoto4
   ]
 
   useEffect(() => {
@@ -78,7 +82,7 @@ const Home = () => {
     {
       title: 'Healthcare Access',
       description: 'Providing resources and facilities to all communities.',
-      image: 'https://i.pinimg.com/1200x/2b/34/dd/2b34ddbb183668e13244861c2d526969.jpg'
+      image: healthcare
     }
   ]
 
@@ -102,12 +106,7 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight">
-              International Medical Health Organization
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
-              "Through collaboration and compassion, we strive to create lasting impact and inspire positive change worldwide."
-            </p>
+           
           </div>
         </div>
 

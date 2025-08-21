@@ -159,7 +159,7 @@ const Donate = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900 dark:text-white">Genaral Fund</p>
-                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Essential medicines for 5 patients</p> */}
+                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">IT equipments support for underprivileged students online learning. </p> */}
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -168,7 +168,7 @@ const Donate = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900 dark:text-white">Education Support</p>
-                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Water filtration for one family</p> */}
+                      <p className="text-sm text-gray-600 dark:text-gray-400">IT equipments support for underprivileged students online learning.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -176,8 +176,8 @@ const Donate = () => {
                       <span className="text-primary-600 dark:text-primary-400 font-bold">£125</span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">Funds healthcare training</p>
-                      {/* <p className="text-sm text-gray-600 dark:text-gray-400">Training for one healthcare worker</p> */}
+                      <p className="font-medium text-gray-900 dark:text-white">Prosthetic Limps</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Medical support includes fitting, physiotherapy &training for one leg</p>
                     </div>
                   </div>
                 </div>
