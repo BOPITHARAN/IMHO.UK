@@ -243,7 +243,7 @@ const Projects = () => {
 
           {/* Title */}
           <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-            Flood Relief 2024
+           Food and Flood Relief
           </h1>
 
           {/* Description */}
