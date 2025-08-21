@@ -36,10 +36,11 @@ const Navbar = () => {
       name: 'Projects',
       path: '/projects',
       submenu: [
-        { name: '⁠Primary Care Assistance', path: '/projects/water-filtration' },
-        { name: '⁠Educational Assistance ', path: '/projects/home-gardening' },
-        { name: '⁠Public Health Supports', path: '/projects/palliative-care' },
-        { name: 'Food and Flood Relief', path: '/projects/flood-relief' }
+        { name: 'Food and Flood Relief', path: '/projects/flood-relief' },
+        { name: '⁠Primary Care Assistance', path: '/projects/⁠Primary-Care' },
+        { name: '⁠Educational Assistance ', path: '/projects/⁠Educational-Assistance' },
+        { name: '⁠Public Health Supports', path: '/projects/⁠Public-Health' },
+
       ]
     },
     {

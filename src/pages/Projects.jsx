@@ -1,5 +1,31 @@
 import React from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import food1 from '../../assets/images/Food/food (1).jpg'
+import food2 from '../../assets/images/Food/food (2).jpg'
+import food3 from '../../assets/images/Food/food (3).jpg'
+import food4 from '../../assets/images/Food/food (4).jpg'
+import food5 from '../../assets/images/Food/food (5).jpg'
+import food6 from '../../assets/images/Food/food (6).jpg'
+import food7 from '../../assets/images/Food/food (7).jpg'
+import food8 from '../../assets/images/Food/food (8).jpg'
+import food9 from '../../assets/images/Food/food (9).jpg'
+import food from '../../assets/images/Food/food.jpg'
+
+import Primary1 from '../../assets/images/Primary/primary (1).jpg'
+import Primary2 from '../../assets/images/Primary/primary (2).jpg'
+import Primary3 from '../../assets/images/Primary/primary (3).jpg'
+import Primary4 from '../../assets/images/Primary/primary (4).jpg'
+import Primary5 from '../../assets/images/Primary/primary (5).jpg'
+import Primary6 from '../../assets/images/Primary/primary (6).jpg'
+
+import education1 from '../../assets/images/Education/education (1).jpg'
+import education2 from '../../assets/images/Education/education (2).jpg'
+import education3 from '../../assets/images/Education/education (3).jpg'
+import education4 from '../../assets/images/Education/education (4).jpg'
+import education5 from '../../assets/images/Education/education (5).jpg'
+import education6 from '../../assets/images/Education/education (6).jpg'
+
+
 
 const Projects = () => {
   const location = useLocation()
@@ -20,7 +46,7 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsData.map((project, index) => (
               <div key={index} className="card overflow-hidden animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${project.image})` }}></div>
+                <div > <img src={project.image} alt="" /></div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
@@ -47,28 +73,28 @@ const Projects = () => {
   const projectsData = [
     {
       title: 'Food and Flood Relief',
-      description: 'Emergency response and recovery support for flood-affected communities.',
-      image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '',
+      image: food,
       status: 'Active',
       link: '/projects/flood-relief'
     },
     {
       title: '⁠Primary Care Assistance',
-      description: 'Improving gender equality in North and East Sri Lanka through education and empowerment programs.',
-      image: 'https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '',
+      image: Primary2,
       status: 'Active',
       link: '/projects/⁠Primary-Care'
     },
     {
       title: '⁠Educational Assistance',
-      description: 'Providing clean water access through filtration systems in Mullaitivu region.',
-      image: 'https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '',
+      image: education2,
       status: 'Active',
       link: '/projects/⁠Educational-Assistance'
     },
     {
       title: '⁠Public Health Supports',
-      description: 'Supporting sustainable food production through home gardening programs in Mullaitivu.',
+      description: '',
       image: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400',
       status: 'Active',
       link: '/projects/⁠Public-Health'
@@ -86,8 +112,8 @@ const Projects = () => {
             </svg>
             Back to Projects
           </Link>
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Gender Equality Initiative</h1>
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Primary Care Assistance</h1>
+          {/* <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>Our Gender Equality Initiative focuses on improving opportunities and outcomes for women and girls in North and East Sri Lanka. This comprehensive program addresses systemic barriers and promotes equal participation in education, healthcare, and economic activities.</p>
             <h3>Key Components</h3>
             <ul>
@@ -98,6 +124,61 @@ const Projects = () => {
             </ul>
             <h3>Impact</h3>
             <p>Since launching this initiative, we have supported over 200 women and girls, providing them with the tools and opportunities needed to build better futures for themselves and their communities.</p>
+          </div> */}
+          <div className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+              <div className="grid gap-3">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary1}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary2}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary3}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary4}
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary5}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={Primary6}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
       </section>
@@ -114,8 +195,8 @@ const Projects = () => {
             </svg>
             Back to Projects
           </Link>
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Mullaitivu Water Filtration Project</h1>
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Educational Assistance</h1>
+          {/* <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>Access to clean, safe drinking water is a fundamental human right. Our Water Filtration Project in Mullaitivu addresses the critical need for clean water in rural communities affected by contamination and infrastructure challenges.</p>
             <h3>Project Goals</h3>
             <ul>
@@ -126,6 +207,61 @@ const Projects = () => {
             </ul>
             <h3>Current Status</h3>
             <p>We have successfully installed 15 filtration systems serving over 3,000 community members. Each system is maintained by trained local volunteers, ensuring long-term sustainability.</p>
+          </div> */}
+          <div className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+              <div className="grid gap-3">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education1}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education2}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education3}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education4}
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education5}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={education6}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
       </section>
@@ -243,11 +379,11 @@ const Projects = () => {
 
           {/* Title */}
           <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-           Food and Flood Relief
+            Food and Flood Relief
           </h1>
 
           {/* Description */}
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          {/* <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>
               In response to the devastating floods of 2024, IMHO-UK launched an
               emergency relief operation to support affected communities with
@@ -275,106 +411,88 @@ const Projects = () => {
               rebuilding homes, schools, and healthcare facilities damaged by
               the floods.
             </p>
-          </div>
+          </div> */}
 
           {/* Gallery Section */}
           <div className="mt-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="grid gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid gap-3">
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                    src={food8}
                     alt=""
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+                    src={food1}
                     alt=""
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4">
-                <div>
-                  <img
-                    className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+                    src={food2}
                     alt=""
                   />
                 </div>
               </div>
 
-              <div className="grid gap-4">
+              <div className="grid gap-3">
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+                    src={food9}
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={food3}
                     alt=""
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+                    src={food4}
                     alt=""
                   />
                 </div>
               </div>
 
-              <div className="grid gap-4">
+              <div className="grid gap-3">
+
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+                    src={food7}
+                    alt=""
+                  />
+                </div>
+
+
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={food6}
                     alt=""
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+                    src={food5}
                     alt=""
                   />
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
