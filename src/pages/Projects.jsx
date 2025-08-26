@@ -25,6 +25,14 @@ import education4 from '../../assets/images/Education/education (4).jpg'
 import education5 from '../../assets/images/Education/education (5).jpg'
 import education6 from '../../assets/images/Education/education (6).jpg'
 
+import health1 from '../../assets/images/health1.jpg'
+import health2 from '../../assets/images/health2.jpg'
+import health3 from '../../assets/images/health3.jpg'
+import health4 from '../../assets/images/health4.jpg'
+import health5 from '../../assets/images/health5.jpg'
+import health6 from '../../assets/images/health6.jpg'
+
+
 
 
 const Projects = () => {
@@ -95,7 +103,7 @@ const Projects = () => {
     {
       title: '⁠Public Health Supports',
       description: '',
-      image: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: health1,
       status: 'Active',
       link: '/projects/⁠Public-Health'
     }
@@ -275,8 +283,8 @@ const Projects = () => {
             </svg>
             Back to Projects
           </Link>
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Mullaitivu Home Gardening Initiative</h1>
-          <div className="prose prose-lg dark:prose-invert max-w-none">
+          <h1 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">⁠Public Health Supports</h1>
+          {/* <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>Food security is essential for healthy communities. Our Home Gardening Initiative empowers families in Mullaitivu to grow their own nutritious food, reducing dependency and improving dietary diversity.</p>
             <h3>Program Features</h3>
             <ul>
@@ -287,6 +295,58 @@ const Projects = () => {
             </ul>
             <h3>Benefits</h3>
             <p>Participating families report improved nutrition, reduced food costs, and increased community cooperation. The program has reached 150 households and continues to expand.</p>
+          </div> */}
+          <div className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+              <div className="grid gap-3">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health4}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health1}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health2}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health6}
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health3}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={health5}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

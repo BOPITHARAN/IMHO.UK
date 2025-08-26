@@ -61,7 +61,7 @@ const Footer = () => {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>      
                 <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">
-                 partner agreement form
+                 Partnership Agreement Form
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -70,7 +70,7 @@ const Footer = () => {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>      
                 <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">
-                 partner agreement form
+                 Agreement Form
                 </a>
               </div>
               
