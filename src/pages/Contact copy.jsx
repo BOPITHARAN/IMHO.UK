@@ -15,18 +15,10 @@ const Contact = () => {
     })
   }
 
-  // --- Option 1: Email Submission (via mailto) ---
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    const mailtoLink = `mailto:info@imhouk.co.uk?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`
-
-    window.location.href = mailtoLink
-
+    // Handle form submission
+    console.log('Form submitted:', formData)
     // Reset form
     setFormData({
       name: '',
@@ -34,15 +26,7 @@ const Contact = () => {
       subject: '',
       message: ''
     })
-  }
-
-  // --- Option 2: WhatsApp Direct Message ---
-  const sendToWhatsApp = () => {
-    const whatsappNumber = '447775811232' // your org’s WhatsApp number
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      `Hello IHMK UK,\n\nMy name is ${formData.name}.\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`
-    )}`
-    window.open(whatsappLink, '_blank')
+    alert('Thank you for your message. We will get back to you soon!')
   }
 
   return (
@@ -133,18 +117,9 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="flex gap-4">
-                  <button type="submit" className="w-full btn-primary">
-                    Send via Email
-                  </button>
-                  <button
-                    type="button"
-                    onClick={sendToWhatsApp}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
-                  >
-                    Send via WhatsApp
-                  </button>
-                </div>
+                <button type="submit" className="w-full btn-primary">
+                  Send Message
+                </button>
               </form>
             </div>
 

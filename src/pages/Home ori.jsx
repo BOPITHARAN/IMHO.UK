@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import homepagephoto from '../../assets/images/home-page-img.jpg'
+import homepagephoto1 from '../../assets/images/1.jpg'
+import homepagephoto2 from '../../assets/images/2.jpg'
+import homepagephoto3 from '../../assets/images/3.jpg'
+import homepagephoto4 from '../../assets/images/4.jpg'
+import healthcare from '../../assets/images/health care.jpg'
 
-const Home = () => {
+const Homee = () => {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Image Slider Photos
+  const sliderImages = [
+    homepagephoto1,
+    homepagephoto2,
+    homepagephoto3,
+    homepagephoto4
+  ]
 
   useEffect(() => {
     fetchLatestNews()
@@ -22,9 +35,17 @@ const Home = () => {
     }
   }
 
+  // Auto Slide every 5 sec
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [sliderImages.length])
+
   const stats = [
     { number: '15+', label: 'Years of Service' },
-    { number: '19', label: 'Countries Reached' },
+    { number: '10', label: 'Countries Reached' },
     { number: '35+', label: 'Hospitals & Clinics Supported' },
     { number: '2000+', label: 'Lives Impacted' }
   ]
@@ -33,70 +54,71 @@ const Home = () => {
     {
       title: 'Healthcare Access',
       description: 'Supporting the development of self-sustaining healthcare solutions that promote long-term resilience and self-reliance.',
-      icon: '🏥'
+      icon: '🏥',
     },
     {
-      title: 'Education & Training',
-      description: 'Leveraging the transformative power of education to improve health outcomes and build local capacity.',
+      title: 'Education & Support',
+      description: 'Supplementary education support for underprivileged children.',
       icon: '📚'
     },
     {
       title: 'Community Partnerships',
       description: 'Partnering with local and international organizations to maximize impact and reach those in greatest need.',
-      icon: '🤝'
+      icon: '🤝',
     }
   ]
 
   const currentNeeds = [
     {
-      title: 'Covid19 Relief',
-      description: 'District General Hospital (DGH) Vavuniya is in urgent need of medical equipment to provide oxygen support to COVID19 patients.',
-      image: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: 'Jaffna Jaipur Center',
+      description: 'Provision of prosthetic limbs for everyone.',
+      image: 'https://www.jjcdr.com/wp-content/uploads/2022/06/bg.jpg'
     },
     {
-      title: 'Palliative Care',
-      description: 'Our international collaborative Northern Province Palliative Care Initiative aims at easing pain and improving quality of life.',
-      image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: 'Supplementary Education',
+      description: 'Providing support for underprivileged children.',
+      image: 'https://i.pinimg.com/1200x/3a/9f/85/3a9f85f11847b481569c95b5745a6109.jpg'
     },
     {
-      title: 'Food Relief',
-      description: 'Food security is a real concern for day labourers and vulnerable families in remote villages affected by the current pandemic.',
-      image: 'https://images.pexels.com/photos/6995247/pexels-photo-6995247.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: 'Healthcare Access',
+      description: 'Providing resources and facilities to all communities.',
+      image: healthcare
     }
   ]
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 hero-pattern">
-        <img src={homepagephoto} alt="" />
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section with Slider */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Image Slider */}
+        <div className="absolute inset-0">
+          {sliderImages.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              style={{ backgroundImage: `url(${img})` }}
+            ></div>
+          ))}
+        </div>
+
+        {/* Content */}
         <div className="relative z-10 container-max text-center text-white px-4">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              The International Medical
-              <br />
-              <span className="gradient-text">Health Organization</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
-              "Through collaboration and compassion, we strive to create lasting impact and inspire positive change worldwide."
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/about" className="btn-secondary bg-white/10 border-white/30 text-white hover:bg-white/20">
-                Learn More
-              </Link>
-              <Link to="/donate" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">
-                Donate Now
-              </Link>
-            </div>
+
           </div>
         </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-          <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+
+        {/* Slider Controls */}
+        <div className="absolute inset-x-0 bottom-8 flex justify-center space-x-3 z-10">
+          {sliderImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'
+                }`}
+            ></button>
+          ))}
         </div>
       </section>
 
@@ -109,15 +131,52 @@ const Home = () => {
                 <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 font-medium">
-                  {stat.label}
-                </div>
+                <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
+      {/* ................................................................................................... */}
+      {/* Hero Section with Slider */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Image Slider */}
+        <div className="absolute inset-0">
+          {sliderImages.map((img, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              style={{ backgroundImage: `url(${img})` }}
+            ></div>
+          ))}
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
 
+        {/* Content on top of slider */}
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            News
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+            Stay informed with our latest updates and activities
+          </p>
+        </div>
+
+        {/* Slider Controls (dots) */}
+        <div className="absolute inset-x-0 bottom-8 flex justify-center space-x-3 z-10">
+          {sliderImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition ${currentSlide === index ? 'bg-white scale-110' : 'bg-white/50'
+                }`}
+            ></button>
+          ))}
+        </div>
+      </section>
+{/* ................................................................................. */}
       {/* Mission Section */}
       <section className="section-padding">
         <div className="container-max">
@@ -131,9 +190,10 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
               <div key={index} className="card p-8 text-center animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="text-4xl mb-4">{area.icon}</div>
+                <div className="text-7xl mb-4">{area.icon}</div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{area.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{area.description}</p>
+
               </div>
             ))}
           </div>
@@ -173,9 +233,7 @@ const Home = () => {
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Recent Activities</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Stay updated with our latest initiatives and impact stories.
-              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-400">Stay updated with our latest initiatives and impact stories.</p>
             </div>
             <Link to="/news" className="btn-secondary hidden sm:inline-block">
               View All News
@@ -201,16 +259,9 @@ const Home = () => {
                         day: 'numeric'
                       })}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                      {article.content.substring(0, 150)}...
-                    </p>
-                    <Link 
-                      to={`/news/${article.id}`} 
-                      className="text-primary-600 dark:text-primary-400 font-medium hover:underline"
-                    >
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white line-clamp-2">{article.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{article.content.substring(0, 150)}...</p>
+                    <Link to={`/news/${article.id}`} className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
                       Read More →
                     </Link>
                   </div>
@@ -248,4 +299,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Homee
