@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet-async"
 import homepagephoto1 from '../../assets/images/1.jpg'
 import homepagephoto2 from '../../assets/images/2.jpg'
 import homepagephoto3 from '../../assets/images/3.jpg'
@@ -22,15 +23,23 @@ const Home = () => {
   // Static sample news
   const sampleNews = [
     {
-      id: 1,
+      id: 3,
       title: "IMHO UK Charity Gala 2025",
       content:
-        "✨ Save the Date ✨Join us for the IMHO UK Charity Gala 2025 in aid of Primary Care Development in UK. 💙 📅 Sunday, 5th October 2025 📍 Crystal Banqueting Hall, Uxbridge Road, London ⏰ Doors open 5:30 PM An evening of compassion, community, and change – together, let’s make a difference! 🌍❤",
-      image_url: "https://scontent.fcmb2-2.fna.fbcdn.net/v/t39.30808-6/539114026_122095177107001487_2571345977508872008_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YqcdaDHllQYQ7kNvwEFlo96&_nc_oc=AdkSxtzq5o-pA7beLAp_toQ8zl5SG7bIY_Mjc0m09i2fb2-n8F24j403YZ8LaRYvatU&_nc_zt=23&_nc_ht=scontent.fcmb2-2.fna&_nc_gid=bhstyDl3xq83Mr3TTgYl8A&oh=00_AfV_yGQDeLNJzAXJaw3JKILEEKQNp10df19AZp5Ox--mvA&oe=68B63800",
-      created_at: "2025-08-15",
+        "A celebration of elegance and purpose featuring fine dining, live music, and dance — dedicated to supporting the Jaffna Jaipur Prosthetic Centre and enhancing online educational access for orphanages.#IMHO #ukcharity #crystalbanquetinghall",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/561107570_122111114565001487_6701902842689464440_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=HGVwPiRz2_AQ7kNvwGb1XRj&_nc_oc=AdkYygthtQx8j769iR0Z0lcDW3HG_G8-0_KQDk6A7J8ORU6rAesXQ0jIVRXUoFGRers&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=G6-0H0kEtqxRvYA5lT4jqQ&oh=00_AfiGJCkczlniXh3yg9kndrJHABBBoIz6bznvChmR-UDZEA&oe=690D64BC",
+      created_at: "2025-10-16",
     },
     {
       id: 2,
+      title: "IMHO UK Charity Gala 2025",
+      content:
+        "✨ Save the Date ✨Join us for the IMHO UK Charity Gala 2025 in aid of Primary Care Development in UK. 💙 📅 Sunday, 5th October 2025 📍 Crystal Banqueting Hall, Uxbridge Road, London ⏰ Doors open 5:30 PM An evening of compassion, community, and change – together, let’s make a difference! 🌍❤",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/539324296_122095209333001487_1047298803308266828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=niBdP4xAcFoQ7kNvwGhL_vZ&_nc_oc=Adn9t32tVpARWdKkx2n-8owuv-vKEirW4ihXsAPohf5YgIceHqjyVXEoXAv4u5Id8Os&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=7eiI4NSSkR-3bW1eon3Zbg&oh=00_Afg35h8BrjzwNaPtqTcGH9QorA5qd0ZC1gMquFENAIS71g&oe=690D60E2",
+      created_at: "2025-08-15",
+    },
+    {
+      id: 1,
       title: "IMHO-UK Launches New Health Initiative",
       content:
         `✨ Join us at the IMHO UK Charity Gala 2025 ✨
@@ -38,7 +47,7 @@ const Home = () => {
             📅 Sunday, 5th October 2025
             📍 Crystal Banqueting Hall, London
             🎟️ Tickets: £50pp` ,
-      image_url: "https://scontent.fcmb2-2.fna.fbcdn.net/v/t39.30808-6/539324296_122095209333001487_1047298803308266828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zR3PksS-7fsQ7kNvwE1HkJN&_nc_oc=AdkMCLekTUXqWMl5XuDcEB67QttM7peGG8RuH4qeIA2_Jcz2Mo67jAI7KVt6Q6y3joE&_nc_zt=23&_nc_ht=scontent.fcmb2-2.fna&_nc_gid=9aKUhSKKA8Xl73KhEVYtyg&oh=00_AfUUk6WqIvQomFJ7RXG1YepJU5cf3Hkpor8y6ZFmIWnTag&oe=68B65DE2",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/539114026_122095177107001487_2571345977508872008_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S9oqewUtNcsQ7kNvwE7Q_c6&_nc_oc=AdnifAuDUYesiuqNM5biBZ3jP8uXsp1xAgdzzWN1f-3mOaX8fSEQt6tnQpbqKxq5Dvo&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=oMRnpEUXeL6YPzOSonNKiQ&oh=00_AfikIZxnFWWWXakU35mQmTgy-cKUZIPJaOiFlTCAdvakdA&oe=690D3B00",
       created_at: "2025-08-15",
     },
   ]
@@ -105,35 +114,49 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Slider */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] bg-sky-500/75 sm:min-h-screen overflow-hidden">
         {/* Image Slider */}
         <div className="absolute inset-0">
           {sliderImages.map((img, index) => (
             <div
               key={index}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: `url(${img})` }}
-            ></div>
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            >
+              <img
+                src={img}
+                alt={`slide-${index}`}
+                className="w-full h-full object-contain sm:object-cover"
+              />
+            </div>
           ))}
         </div>
 
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
         {/* Content */}
-        <div className="relative z-10 container-max text-center text-white px-4">
-          <div className="animate-fade-in"></div>
+        <div className="relative z-10 container-max text-center text-white px-4 sm:px-6 flex flex-col justify-start sm:justify-center min-h-[70vh] sm:min-h-screen pt-16 sm:pt-0">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold drop-shadow-lg">
+            Welcome to IMHO-UK
+          </h1>
+          <p className="mt-4 text-sm sm:text-lg max-w-2xl mx-auto opacity-90">
+            Together, let’s build healthier and stronger communities worldwide.
+          </p>
         </div>
 
         {/* Slider Controls */}
-        <div className="absolute inset-x-0 bottom-8 flex justify-center space-x-3 z-10">
+        <div className="absolute inset-x-0 bottom-4 sm:bottom-8 flex justify-center space-x-2 sm:space-x-3 z-10">
           {sliderImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'}`}
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'}`}
             ></button>
           ))}
         </div>
       </section>
+
+
 
       {/* Stats Section */}
       <section className="section-padding bg-gray-50 dark:bg-gray-800">
@@ -150,8 +173,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* Mission Section */}
       <section className="section-padding">

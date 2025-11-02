@@ -11,16 +11,23 @@ const NewsDetail = () => {
   // Same mock data as News.jsx
   const sampleNews = [
     {
-      id: 1,
-      title: "IMHO-UK Launches New Health Initiative",
+      id: 3,
+      title: "IMHO UK Charity Gala 2025",
       content:
-        `✨ Save the Date ✨Join us for the IMHO UK Charity Gala 2025 in aid of Primary Care Development in UK. 💙 📅 Sunday, 5th October 2025 📍 Crystal Banqueting Hall, Uxbridge Road, London ⏰ Doors open 5:30 PM An evening of compassion, community, and change – together, let’s make a difference! 🌍❤`,
-      image_url: "https://scontent.fcmb2-2.fna.fbcdn.net/v/t39.30808-6/539114026_122095177107001487_2571345977508872008_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YqcdaDHllQYQ7kNvwEFlo96&_nc_oc=AdkSxtzq5o-pA7beLAp_toQ8zl5SG7bIY_Mjc0m09i2fb2-n8F24j403YZ8LaRYvatU&_nc_zt=23&_nc_ht=scontent.fcmb2-2.fna&_nc_gid=bhstyDl3xq83Mr3TTgYl8A&oh=00_AfV_yGQDeLNJzAXJaw3JKILEEKQNp10df19AZp5Ox--mvA&oe=68B63800",
-      created_at: "2025-08-15",
+        "A celebration of elegance and purpose featuring fine dining, live music, and dance — dedicated to supporting the Jaffna Jaipur Prosthetic Centre and enhancing online educational access for orphanages.   #IMHO #ukcharity #crystalbanquetinghall",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/561107570_122111114565001487_6701902842689464440_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=HGVwPiRz2_AQ7kNvwGb1XRj&_nc_oc=AdkYygthtQx8j769iR0Z0lcDW3HG_G8-0_KQDk6A7J8ORU6rAesXQ0jIVRXUoFGRers&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=G6-0H0kEtqxRvYA5lT4jqQ&oh=00_AfiGJCkczlniXh3yg9kndrJHABBBoIz6bznvChmR-UDZEA&oe=690D64BC",
+      created_at: "2025-10-16",
     },
-
     {
       id: 2,
+      title: "IMHO UK Charity Gala 2025",
+      content:
+        "✨ Save the Date ✨Join us for the IMHO UK Charity Gala 2025 in aid of Primary Care Development in UK. 💙 📅 Sunday, 5th October 2025 📍 Crystal Banqueting Hall, Uxbridge Road, London ⏰ Doors open 5:30 PM An evening of compassion, community, and change – together, let’s make a difference! 🌍❤",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/539324296_122095209333001487_1047298803308266828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=niBdP4xAcFoQ7kNvwGhL_vZ&_nc_oc=Adn9t32tVpARWdKkx2n-8owuv-vKEirW4ihXsAPohf5YgIceHqjyVXEoXAv4u5Id8Os&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=7eiI4NSSkR-3bW1eon3Zbg&oh=00_Afg35h8BrjzwNaPtqTcGH9QorA5qd0ZC1gMquFENAIS71g&oe=690D60E2",
+      created_at: "2025-08-15",
+    },
+    {
+      id: 1,
       title: "IMHO-UK Launches New Health Initiative",
       content:
         `✨ Join us at the IMHO UK Charity Gala 2025 ✨
@@ -28,7 +35,7 @@ const NewsDetail = () => {
             📅 Sunday, 5th October 2025
             📍 Crystal Banqueting Hall, London
             🎟️ Tickets: £50pp` ,
-      image_url: "https://scontent.fcmb2-2.fna.fbcdn.net/v/t39.30808-6/539324296_122095209333001487_1047298803308266828_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zR3PksS-7fsQ7kNvwE1HkJN&_nc_oc=AdkMCLekTUXqWMl5XuDcEB67QttM7peGG8RuH4qeIA2_Jcz2Mo67jAI7KVt6Q6y3joE&_nc_zt=23&_nc_ht=scontent.fcmb2-2.fna&_nc_gid=9aKUhSKKA8Xl73KhEVYtyg&oh=00_AfUUk6WqIvQomFJ7RXG1YepJU5cf3Hkpor8y6ZFmIWnTag&oe=68B65DE2",
+      image_url: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/539114026_122095177107001487_2571345977508872008_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=S9oqewUtNcsQ7kNvwE7Q_c6&_nc_oc=AdnifAuDUYesiuqNM5biBZ3jP8uXsp1xAgdzzWN1f-3mOaX8fSEQt6tnQpbqKxq5Dvo&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=oMRnpEUXeL6YPzOSonNKiQ&oh=00_AfikIZxnFWWWXakU35mQmTgy-cKUZIPJaOiFlTCAdvakdA&oe=690D3B00",
       created_at: "2025-08-15",
     },
 
@@ -123,43 +130,42 @@ const NewsDetail = () => {
           </div>
 
           {/* Share Section */}
-<div className="mt-12 pt-8 border-t dark:border-gray-700">
-  <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-    Share this article
-  </h3>
-  <div className="flex space-x-4">
-    {/* Twitter */}
-    <a
-      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
-    >
-      <span>Twitter</span>
-    </a>
+          <div className="mt-12 pt-8 border-t dark:border-gray-700">
+            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+              Share this article
+            </h3>
+            <div className="flex space-x-4">
+              {/* Twitter */}
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                <span>Twitter</span>
+              </a>
 
-    {/* Facebook */}
-    <a
-      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center space-x-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors duration-200"
-    >
-      <span>Facebook</span>
-    </a>
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors duration-200"
+              >
+                <span>Facebook</span>
+              </a>
 
-    {/* LinkedIn */}
-    <a
-      href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(article.title)}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
-    >
-      <span>LinkedIn</span>
-    </a>
-  </div>
-</div>
-
+              {/* LinkedIn */}
+              <a
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(article.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
+              >
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
 
           {/* Related Articles */}
           <div className="mt-12 pt-8 border-t dark:border-gray-700">

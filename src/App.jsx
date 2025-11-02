@@ -16,6 +16,7 @@ import Contact from './pages/Contact'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import ProtectedRoute from './components/ProtectedRoute'
+import Gallery from './components/Gallery'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about/*" element={<About />} />
                 <Route path="/news" element={<News />} />
+                <Route path="/gallery" element={<Gallery />} />
                 <Route path="/news/:id" element={<NewsDetail />} />
                 <Route path="/projects/*" element={<Projects />} />
                 <Route path="/get-involved/*" element={<GetInvolved />} />

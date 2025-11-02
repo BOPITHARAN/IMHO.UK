@@ -54,6 +54,10 @@ const Navbar = () => {
     {
       name: 'News',
       path: '/news'
+    },
+    {
+      name: 'Gallery',
+      path: '/gallery'
     }
   ]
 
